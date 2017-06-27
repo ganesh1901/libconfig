@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
    libconfig - A library for processing structured configuration files
-   Copyright (C) 2005-2015  Mark A Lindner
+   Copyright (C) 2005-2014  Mark A Lindner
 
    This file is part of libconfig.
 
@@ -370,20 +370,6 @@ void Config::setTabWidth(unsigned short width)
 unsigned short Config::getTabWidth() const
 {
   return(config_get_tab_width(_config));
-}
-
-// ---------------------------------------------------------------------------
-
-void Config::setFloatPrecision(unsigned short digits)
-{
-  return (config_set_float_precision(_config,digits));
-}
-
-// ---------------------------------------------------------------------------
-
-unsigned short Config::getFloatPrecision() const
-{
-  return (config_get_float_precision(_config));
 }
 
 // ---------------------------------------------------------------------------

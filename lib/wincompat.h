@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
    libconfig - A library for processing structured configuration files
-   Copyright (C) 2005-2015  Mark A Lindner
+   Copyright (C) 2005-2014  Mark A Lindner
 
    This file is part of libconfig.
 
@@ -34,18 +34,12 @@
 
 #define fileno _fileno
 #define fstat _fstat
-#define stat _stat // struct stat for fstat()
 #define snprintf  _snprintf
 
-#if !defined(__MINGW32__) && _MSC_VER < 1800
+#ifndef __MINGW32__
 #define atoll     _atoi64
 #define strtoull  _strtoui64
-#define strtoll   _strtoi64
-#endif
-
-#if !defined(S_ISDIR) && defined(S_IFMT) && defined(S_IFDIR)
-#define S_ISDIR(m) (((m) & S_IFMT) == S_IFDIR)
-#endif
+#endif /* __MINGW32__ */
 
 #endif
 

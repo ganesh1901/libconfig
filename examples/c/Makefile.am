@@ -1,8 +1,11 @@
 
-check_PROGRAMS = example1 example2 example3
-noinst_PROGRAMS=$(check_PROGRAMS)
+noinst_PROGRAMS = example1 example2 example3
 
-TESTS = $(check_PROGRAMS)
+example1_SOURCES = example1.c
+
+example2_SOURCES = example2.c
+
+example3_SOURCES = example3.c
 
 AM_CPPFLAGS = -I $(top_srcdir)/lib
 
